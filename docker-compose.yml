@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  sendspin:
+    build: .
+    container_name: sendspin
+    restart: unless-stopped
+    network_mode: host
+    devices:
+      - /dev/snd
+    environment:
+      SENDSPIN_NAME: "Sendspin Player"
+      SENDSPIN_SERVER_IP: "192.168.1.100"
+      SENDSPIN_PORT: "8080"
