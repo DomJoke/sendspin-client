@@ -10,6 +10,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     jq \
  && rm -rf /var/lib/apt/lists/*
 
+ # 🔒 Pin numpy to a CPU-safe version
+RUN pip install --no-cache-dir "numpy<2"
+
 RUN pip install --no-cache-dir \
     git+https://github.com/Sendspin/sendspin-cli.git
 
