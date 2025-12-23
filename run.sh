@@ -28,4 +28,7 @@ if [ -n "$SERVER_IP" ]; then
 fi
 
 echo "Starting Sendspin with args: $*"
-exec sendspin "$@"
+#exec sendspin "$@"
+
+# Keep container running
+tail -f /dev/null
